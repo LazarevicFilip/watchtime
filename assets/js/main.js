@@ -516,7 +516,7 @@ if(loc=="/phpSajt/newpost.php"){
             category.classList.add('succ');
             category.nextElementSibling.classList.add('hide')
         }
-        if(descPost.value < 100){
+        if(descPost.value.length < 100){
             descPost.classList.add('err');
             descPost.classList.remove('succ');
             descPost.nextElementSibling.classList.remove('hide');

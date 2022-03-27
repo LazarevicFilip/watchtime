@@ -38,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnSubmit"]) && isset(
             $err++;
         }
     }
+    var_dump($err);
     if ($err == 0 && $errFile == 0) {
         $uploadErr = 0;
         $imgFormat = ["image/jpg", "image/jpeg", "image/png"];
@@ -45,6 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnSubmit"]) && isset(
             $uploadErr++;
             $_SESSION['errType'] = "Image format must be .jpg, .jpeg, .png ";
         }
+        var_dump($_SESSION["errType"]);
 
         if ($size > 200000) {
             $uploadErr++;
@@ -58,7 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["btnSubmit"]) && isset(
                 $insertPost = insertPost($title, $desc, $korisnik->id, $category, $newFileName);
                 if ($insertPost) {
                     header("Location: ../newpost.php?success=1");
+                } else {
+                    var_dump("nije");
                 }
+            } else {
+                var_dump("nije ws");
             }
         } else {
             header("Location: ../newpost.php");

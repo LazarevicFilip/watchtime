@@ -10,9 +10,8 @@
                     <?php
                     include_once("config/connection.php");
                     include("models/functions.php");
-                    session_start();
+                    // session_start();
                     $meni = getAll("meni");
-                    // var_dump($meni);
                     for ($i = 0; $i < count($meni); $i++) {
                         if (isset($_SESSION["user"])) {
                             if ($_SESSION["user"]->uloga == "Korisnik" && stripos($meni[$i]->naziv, "admin") == "" && stripos($meni[$i]->naziv, "login") == "" && (stripos($meni[$i]->naziv, "register")) == "") {

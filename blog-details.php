@@ -11,6 +11,9 @@ if (isset($_GET['id'])) {
     // var_dump($commentsByPost);
 }
 ?>
+<div class="container my-3">
+    <a class="mt-5" href="blog.php"><i class="fas fa-arrow-left fa-2x"></i></a>
+</div>
 <div class="container py-5 ">
     <div class="row ">
         <div class="mx-auto col-md-9">

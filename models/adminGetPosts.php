@@ -23,7 +23,8 @@ if (isset($_SESSION["user"]) && $_SESSION["user"]->uloga == "Admin") {
             $output .= "<td>" . $post->naslov . "</td>";
             $output .= "<td>" . $post->ime . " " . $post->prezime . "</td>";
             $output .= "<td>" . date("M d, Y", strtotime($post->datum)) . "</td>";
-            $output .= '<td><a href="#" class="btn btn-danger deletePost white-color" data-idpost="' . $post->idKor . '">Delete</a></td>';
+            $output .= '<td><a href="#" class="btn btn-danger deletePost white-color" data-idpost="' . $post->id . '">Delete</a></td>';
+       
         }
         $output .= '</table></div>';
         $output .= '<section>';
